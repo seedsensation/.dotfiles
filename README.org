@@ -1,0 +1,56 @@
+* .dotfiles
+This is where all of my config for my Arch setup is :)
+Documentation for everything I've made is in this file.
+
+Using the GNU Stow package, all of these packages are placed within the =~/.config= folder.
+
+Once configured, it should look something like this on a 3440x1440 monitor:
+[[./.docs/screenshot-windowsopen.png]]
+
+or this, without any windows open:
+[[./.docs/screenshot-desktop.png]]
+
+Everything here _should_ work out of the box, aside from the [[*Polybar][Polybar]] setup - see that section later in the docs for how to set that up.
+
+* Requirements
+- i3
+- kitty
+- picom
+- polybar
+- rofi
+
+* Modules
+** Polybar
+This is the one I've done the most setup for, and the one that'll need the most tinkering to get to work.
+
+Change the =monitor= property under =bar/root= to your primary monitor, and under =bar/monitor2= to a secondary monitor.
+Then, change =offset-x= under =bar/right= to $(\text{"monitor width"} * 0.9) - 10$ and it should work :)
+
+The secondary monitor has a default polybar setup with a few things switched around to better fit with what I wanted out of it - but the primary monitor has a few I set up myself. Leftmost has a power button (using [[*rofi][rofi]]) and buttons to open my most used apps (emacs, [[*kitty][kitty]], VLC and Krita). Further along there's a separate window that has the current date and time, then the title of the current window, and finally the title of what's currently playing.
+[[./.docs/polybar.png]]
+
+** Kitty
+Did some editing on the theme, setting the font and setting up the blurred background - nothing super interesting though.
+
+** Picom
+Again only minor config here - no shadow under windows, rounded edges nad a blur in the background of windows.
+
+** Rofi
+Set up a colour scheme for it, and also downloaded the [[https://github.com/jluttine/rofi-power-menu][rofi-power-menu]] script, to use as the power button on my [[*Polybar][Polybar]] setup.
+
+** bash-startup-images
+This file is for images to appear every time I open a new BASH shell. It links up with this part of my =.bashrc= file:
+#+begin_src bash
+kitten icat --align left --use-window-size 800,100,800,100 $(find ~/.config/bash-startup-images | grep -e \.png -e \.jpg -e \.jpeg -e \.gif | shuf -n 1)
+#+end_src
+And this is the end result:
+[[./.docs/bash-startup-images.png]]
+
+** i3
+This is the big one, and I've definitely made some choices here.
+The main one being that. I restart emacs on login, because the daemon seems to always load before I've logged in, and that means you can't use graphical mode. I've tried using a drop-in, I've tried reconfiguring the service and digging around in configs for hours, and the only fix I've found is using the =emacs-wayland= fork instead, and /that/ one yells at me whenever I load it in i3, so what's the point.
+I use scrot as the screenshot tool, taking a sc of a snippet of the screen whenever I press the =PrntSc= key.
+I've set gaps between the windows, just because I think that looks nicer, and set up the [[*rofi][rofi]] app switcher as =mod-space=.
+
+* Conclusion
+Please don't use this setup. If you do, let me know how it broke and feel free to pull request it if you like, but this is really just my own personal config and I'm not expecting it to work on anyone else's machine. Either way, though, thanks for reading :)
