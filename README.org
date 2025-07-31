@@ -10,7 +10,7 @@ Once configured, it should look something like this on a 3440x1440 monitor:
 or this, without any windows open:
 [[./.docs/screenshot-desktop.png]]
 
-Everything here _should_ work out of the box, aside from the [[*Polybar][Polybar]] setup - see that section later in the docs for how to set that up.
+Everything here _should_ work out of the box, aside from the *Polybar* setup - see that section later in the docs for how to set that up.
 
 * Requirements
 - i3
@@ -26,7 +26,7 @@ This is the one I've done the most setup for, and the one that'll need the most 
 Change the =monitor= property under =bar/root= to your primary monitor, and under =bar/monitor2= to a secondary monitor.
 Then, change =offset-x= under =bar/right= to $(\text{"monitor width"} * 0.9) - 10$ and it should work :)
 
-The secondary monitor has a default polybar setup with a few things switched around to better fit with what I wanted out of it - but the primary monitor has a few I set up myself. Leftmost has a power button (using [[*rofi][rofi]]) and buttons to open my most used apps (emacs, [[*kitty][kitty]], VLC and Krita). Further along there's a separate window that has the current date and time, then the title of the current window, and finally the title of what's currently playing.
+The secondary monitor has a default polybar setup with a few things switched around to better fit with what I wanted out of it - but the primary monitor has a few I set up myself. Leftmost has a power button (using *rofi*) and buttons to open my most used apps (*emacs*, *rofi*, *VLC* and *Krita*). Further along there's a separate window that has the current date and time, then the title of the current window, and finally the title of what's currently playing.
 [[./.docs/polybar.png]]
 
 ** Kitty
@@ -36,7 +36,7 @@ Did some editing on the theme, setting the font and setting up the blurred backg
 Again only minor config here - no shadow under windows, rounded edges nad a blur in the background of windows.
 
 ** Rofi
-Set up a colour scheme for it, and also downloaded the [[https://github.com/jluttine/rofi-power-menu][rofi-power-menu]] script, to use as the power button on my [[*Polybar][Polybar]] setup.
+Set up a colour scheme for it, and also downloaded the [[https://github.com/jluttine/rofi-power-menu][rofi-power-menu]] script, to use as the power button on my *Polybar* setup.
 
 ** bash-startup-images
 This file is for images to appear every time I open a new BASH shell. It links up with this part of my =.bashrc= file:
