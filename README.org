@@ -2,6 +2,10 @@
 This is where all of my config for my Arch setup is :)
 Documentation for everything I've made is in this file.
 
+Primarily right now, this is all just aesthetic setup with a few *i3* keyboard commands put in for good measure. This is becoming my main workspace though, so I'll update this semi-regularly with my current config.
+
+Also, it's not in this repository to make it more portable, but [[https://github.com/seedsensation/doom-emacs-config][my configuration for emacs can be found over here]] :)
+
 Using the GNU Stow package, all of these packages are placed within the =~/.config= folder.
 
 Once configured, it should look something like this on a 3440x1440 monitor:
@@ -43,7 +47,7 @@ This file is for images to appear every time I open a new BASH shell. It links u
 #+begin_src bash
 kitten icat --align left --use-window-size 800,100,800,100 $(find ~/.config/bash-startup-images | grep -e \.png -e \.jpg -e \.jpeg -e \.gif | shuf -n 1)
 #+end_src
-And this is the end result:
+to pick a random image from the folder every time I load up a new shell. And this is the end result:
 [[./.docs/bash-startup-images.png]]
 
 ** i3
