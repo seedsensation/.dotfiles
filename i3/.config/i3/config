@@ -21,16 +21,16 @@ exec_always --no-startup-id picom --config /home/mercury/.config/picom/picom.con
 
 exec --no-startup-id systemctl --user restart emacs
 
-exec_always /home/mercury/.config/polybar/launch_polybar.sh
+exec_always --no-startup-id /home/mercury/.config/polybar/launch_polybar.sh
 
 #exec_always find ~/.config/wallpapers/ | grep -e .*\.png -e .*\.jpg -e .*\.jpeg -e .*\.gif | shuf -n 1 | feh --bg-scale -f -
 exec_always --no-startup-id feh --bg-center /home/mercury/.config/wallpapers/tree-wallpaper.png
 
-bindsym $mod+Shift+d exec --no-startup-d dmenu_run
+bindsym $mod+Shift+d exec --no-startup-id dmenu_run
 
 bindsym Print exec scrot -s '/tmp/%F_%T_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'
 
-bindsym $mod+space exec rofi -show combi
+bindsym $mod+space exec --no-startup-id rofi -show combi
 
 # inner gaps for all windows
 gaps inner 10px
