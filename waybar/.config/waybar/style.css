@@ -32,6 +32,7 @@
 }
 
 #cpu,
+#battery,
 #memory {
     padding: 0rem 0.5rem;
 }
@@ -40,6 +41,9 @@
     background-color: #ac82e9;
 }
 #memory:hover {
+    background-color: #ac82e9;
+}
+#battery:hover {
     background-color: #ac82e9;
 }
 

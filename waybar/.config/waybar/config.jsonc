@@ -213,6 +213,7 @@
     "group/hardware": {
         "orientation": "horizontal",
         "modules": [
+            "battery",
             "cpu",
             "memory"
         ]
